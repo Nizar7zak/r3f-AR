@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useAnimations, useGLTF } from "@react-three/drei"
+import { Interactive } from '@react-three/xr'
 import { useControls } from "leva"
 
 const Fox = () => {
@@ -18,17 +19,25 @@ const Fox = () => {
             action.fadeOut(0.5)
         })
         // window.setTimeout(() => {
-        //   animations.actions.Walk.play()
-        //   animations.actions.Walk.crossFadeFrom(animations.actions.Run, 1)
+        
         // }, 3000)
 
     }, [animationSelected])
+
+
+    const onSelect = () => {
+        animations.actions.Walk.play()
+        animations.actions.Walk.crossFadeFrom(animations.actions.Run, 1)    
+    }
+
     return (
-        <primitive
-            object={fox.scene}
-            scale={0.01}
-            position={[0, -0.5, -2]}
-        />
+        <Interactive onSelect={onSelect}>
+            <primitive
+                object={fox.scene}
+                scale={0.01}
+                position={[0, -0.5, -2]}
+            />
+        </Interactive>
     )
 }
 
