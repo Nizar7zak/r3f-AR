@@ -18,16 +18,11 @@ const Fox = () => {
         return (() => {
             action.fadeOut(0.5)
         })
-        // window.setTimeout(() => {
-        
-        // }, 3000)
-
     }, [animationSelected])
-
 
     const onSelect = () => {
         animations.actions.Walk.play()
-        animations.actions.Walk.crossFadeFrom(animations.actions.Run, 1)    
+        animations.actions.Walk.crossFadeFrom(animations.actions.Run, 1)
     }
 
     return (
