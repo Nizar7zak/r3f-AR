@@ -18,9 +18,9 @@ export default function App() {
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
           {/* <Label position={[0, 0.1, -0.2]} /> */}
-          {/* <Fox /> */}
-          <Door />
-          <Room/>
+          <Fox />
+          {/* <Door />
+          <Room/> */}
           <Controllers />
         </XR>
       </Canvas>
