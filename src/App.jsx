@@ -1,9 +1,10 @@
 import { XR, ARButton, Controllers } from '@react-three/xr'
 import { Canvas } from '@react-three/fiber'
 import Label from './components/Label'
-import './index.css'
 import Fox from './components/Fox'
 import Door from './components/Door'
+import Room from './components/Room'
+import './index.css'
 
 
 
@@ -18,6 +19,7 @@ export default function App() {
           {/* <Label position={[0, 0.1, -0.2]} /> */}
           {/* <Fox /> */}
           <Door />
+          <Room/>
           <Controllers />
         </XR>
       </Canvas>
