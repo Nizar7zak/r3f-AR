@@ -6,6 +6,8 @@ const Room = () => {
     return (
         <primitive
             object={door.scene}
+            position={[0, -1, -1]}     
+
         />
     )
 }
