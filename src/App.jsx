@@ -14,8 +14,8 @@ export default function App() {
         <XR referenceSpace="local">
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
-          {/* <Label position={[0, 0.1, -0.2]} /> */}
-          <Fox />
+          <Label position={[0, 0.1, -0.2]} />
+          {/* <Fox /> */}
           <Controllers />
         </XR>
       </Canvas>
