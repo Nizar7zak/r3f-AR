@@ -35,7 +35,7 @@ function Button(props) {
   )
 }
 
-export function App() {
+export default function App() {
   return (
     <>
       <ARButton />
