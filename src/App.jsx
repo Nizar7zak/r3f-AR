@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Suspense, useState } from 'react'
+import { Interactive, XR, ARButton, Controllers } from '@react-three/xr'
+import { Text } from '@react-three/drei'
+import './index.css'
+import { Canvas } from '@react-three/fiber'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Box({ color, size, scale, children, ...rest }) {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <mesh scale={scale} {...rest}>
+      <boxBufferGeometry args={size} />
+      <meshPhongMaterial color={color} />
+      {children}
+    </mesh>
   )
 }
 
-export default App
+function Button(props) {
+  const [hover, setHover] = useState(false)
+  const [color, setColor] = useState('blue')
+
+  const onSelect = () => {
+    setColor((Math.random() * 0xffffff) | 0)
+  }
+
+  return (
+    <Interactive onHover={() => setHover(true)} onBlur={() => setHover(false)} onSelect={onSelect}>
+      <Box color={color} scale={hover ? [0.6, 0.6, 0.6] : [0.5, 0.5, 0.5]} size={[0.4, 0.1, 0.1]} {...props}>
+        <Suspense fallback={null}>
+          <Text position={[0, 0, 0.06]} fontSize={0.05} color="#000" anchorX="center" anchorY="middle">
+            Hello react-xr!
+          </Text>
+        </Suspense>
+      </Box>
+    </Interactive>
+  )
+}
+
+export function App() {
+  return (
+    <>
+      <ARButton />
+      <Canvas>
+        <XR referenceSpace="local">
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+          <Button position={[0, 0.1, -0.2]} />
+          <Controllers />
+        </XR>
+      </Canvas>
+    </>
+  )
+}
