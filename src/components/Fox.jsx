@@ -27,7 +27,7 @@ const Fox = () => {
         <primitive
             object={fox.scene}
             scale={0.01}
-            position={[0, -1, -1]}
+            position={[0, 0, -2]}
         />
     )
 }
