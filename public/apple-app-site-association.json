@@ -3,8 +3,8 @@
         "apps": [],
         "details": [
             {
-                "appID": "<TeamID>.<BundleID>",
-                "paths": ["/appclip*"]
+                "appID": "3M46GMLB3X.alltech.nizarapp",
+                "paths": ["*"]
             }
         ]
     }
