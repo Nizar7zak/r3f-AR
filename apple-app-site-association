@@ -1,9 +1,12 @@
 {
+    "appclips": {
+        "apps": ["3M46GMLB3X.alltech.test1.Clip"]
+    },
     "applinks": {
         "apps": [],
         "details": [
             {
-                "appID": "3M46GMLB3X.alltech.nizarapp",
+                "appID": "3M46GMLB3X.alltech.test1",
                 "paths": ["*"]
             }
         ]
