@@ -1,18 +1,16 @@
+
 {
-  "appclips": {
-    "apps": [
-      "XM9YMQACH6.com.hanykahlout.HANYARKIT.Clip"
-    ]
-  },
   "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "XM9YMQACH6.com.hanykahlout.HANYARKIT",
-        "paths": [
-          "*"
-        ]
-      }
-    ]
-  }
+      "details": [
+           {
+             "appIDs": [ "XM9YMQACH6.com.hanykahlout.HANYARKIT"],
+             "paths": [ "*" ]
+           }
+       ]
+   },
+
+
+    "appclips": {
+        "apps": ["XM9YMQACH6.com.hanykahlout.HANYARKIT.Clip"]
+    }
 }
